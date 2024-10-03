@@ -52,106 +52,49 @@ st.markdown(
         font-family: Arial, sans-serif;
         box-shadow: 0px -4px 8px rgba(0, 0, 0, 0.2);
     }
-    .profile-card-container {
-        display: flex;
-        justify-content: space-around;
-        flex-wrap: wrap;
-        gap: 20px;
-        margin: 20px 0;
-    }
-    .profile-card {
-        background-color: #2E3440;
-        width: 150px;
-        height: 180px;
-        padding: 10px;
-        border-radius: 10px;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-        transition: all 0.3s ease;
-        text-align: center;
+    .footer-container {
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: center;
+        gap: 10px;
     }
-    .profile-card:hover {
-        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
-    }
-    .profile-pic {
-        width: 80px;
-        height: 80px;
-        border-radius: 50%;
-        margin-bottom: 5px;
-        object-fit: cover;
-        border: 3px solid #444444;
-    }
-    .profile-name {
+    .footer-name {
+        font-size: 1.2em;
         color: white;
-        font-size: 1em;
-        margin-bottom: 5px;
+        margin: 0;
     }
-    .profile-student-id {
-        color: #A0A0A0;
-        font-size: 0.8em;
-        margin-bottom: 5px;
+    .social-icons {
+        display: flex;
+        justify-content: center;
+        gap: 15px;
     }
-    .linkedin-icon {
+    .social-icon {
         width: 25px;
         height: 25px;
         transition: all 0.3s ease;
     }
-    .linkedin-icon:hover {
+    .social-icon:hover {
         transform: scale(1.2);
         filter: brightness(1.5);
     }
-
     /* Responsive Styling */
     @media only screen and (max-width: 768px) {
-        .profile-card-container {
-            flex-wrap: wrap;
-            justify-content: space-between; /* Two cards per row */
-        }
-
-        .profile-card {
-            width: 45%; /* Two cards in one row with some gap */
-            margin-bottom: 20px;
-        }
-
         h1 {
-            font-size: 2em; /* Adjust heading size for smaller screens */
+            font-size: 2em;
         }
-
         .stButton > button {
             font-size: 0.9em;
             padding: 6px 16px;
         }
-
-        .profile-pic {
-            width: 60px;
-            height: 60px;
+    }
+    @media only screen and (max-width: 480px) {
+        .social-icons {
+            gap: 10px;
         }
-
-        .profile-name {
-            font-size: 0.9em;
-        }
-
-        .profile-student-id {
-            font-size: 0.7em;
-        }
-
-        .linkedin-icon {
+        .social-icon {
             width: 20px;
             height: 20px;
-        }
-    }
-
-    @media only screen and (max-width: 480px) {
-        .profile-card {
-            width: 100%; /* Full width for one card per row on small screens */
-        }
-
-        .profile-pic {
-            width: 50px;
-            height: 50px;
         }
     }
     </style>
@@ -198,42 +141,18 @@ def main():
         except Exception as e:
             st.error(f"Error processing image: {e}")
 
-    # Adding developer credits in the footer with profile cards
+    # Adding developer credits in the footer with social media icons
     st.markdown(
         """
         <footer>
-        <center><h2 class="grd-text">Developed By</h2></center>
-            <div class="profile-card-container">
-                <div class="profile-card">
-                    <img class="profile-pic" src="https://i.imgur.com/rYwkUxY.jpeg">
-                    <div class="profile-name">Karthik Prabhu</div>
-                    <div class="profile-student-id">Student ID: 22BBTCS135</div>
+            <div class="footer-container">
+                <p class="footer-name">Developed by Karthik Prabhu</p>
+                <div class="social-icons">
                     <a href="https://www.linkedin.com/in/karthikprabhu010/" target="_blank">
-                        <img class="linkedin-icon" src="https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png">
+                        <img class="social-icon" src="https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png" alt="LinkedIn">
                     </a>
-                </div>
-                <div class="profile-card">
-                    <img class="profile-pic" src="https://via.placeholder.com/80">
-                    <div class="profile-name">Kruthika K</div>
-                    <div class="profile-student-id">Student ID: 22BBTCS150</div>
-                    <a href="https://www.linkedin.com/in/dev2" target="_blank">
-                        <img class="linkedin-icon" src="https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png">
-                    </a>
-                </div>
-                <div class="profile-card">
-                    <img class="profile-pic" src="https://via.placeholder.com/80">
-                    <div class="profile-name">Kruthika M</div>
-                    <div class="profile-student-id">Student ID: 22BBTCS151</div>
-                    <a href="https://www.linkedin.com/in/dev3" target="_blank">
-                        <img class="linkedin-icon" src="https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png">
-                    </a>
-                </div>
-                <div class="profile-card">
-                    <img class="profile-pic" src="https://via.placeholder.com/80">
-                    <div class="profile-name">Maanya S</div>
-                    <div class="profile-student-id">Student ID: 22BBTCS165</div>
-                    <a href="https://www.linkedin.com/in/dev4" target="_blank">
-                        <img class="linkedin-icon" src="https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png">
+                    <a href="https://www.instagram.com/karthik10.__" target="_blank">
+                        <img class="social-icon" src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram">
                     </a>
                 </div>
             </div>
